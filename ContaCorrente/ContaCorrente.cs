@@ -28,22 +28,22 @@ namespace ContaCorrente
         //    mostrar todas movimentações feitas na conta
 
         //    mostrar saldo
-        public decimal Sacar(decimal valor)
+        public decimal Sacar(decimal quantia)
         {
-            if (valor >= Limite + Saldo)
+            if (quantia >= Limite + Saldo)
             {
                 Console.WriteLine("> Limite de saque excedido.");
             }
 
             else
             {
-                Saldo -= valor;
+                Saldo -= quantia;
 
-                Console.WriteLine($">> Saque efetuado no valor de {valor}");
+                Console.WriteLine($">> Saque efetuado no valor de {quantia}");
 
                 ExibirSaldo();
 
-                AdicionarMovimentacao("DEBITO", $">> Saque no valor de {valor}");
+                AdicionarMovimentacao("DEBITO", $">> Saque no valor de {quantia}");
 
                 Console.ReadKey();
             }
